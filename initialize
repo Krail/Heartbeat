@@ -1,0 +1,8 @@
+#!/bin/sh
+touch /.hrc
+chmod 600 /.hrc
+echo "# LOG file address" > /.hrc
+echo "LOG=" >> /.hrc
+echo "" >> /.hrc
+echo "# LAN server's IP address" >> /.hrc
+echo "SERVER=" >> /.hrc
