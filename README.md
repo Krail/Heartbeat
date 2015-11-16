@@ -1,6 +1,6 @@
 # Give your computer a heartbeat on its LAN
 
-Give your computer a "heartbeat" so it remains in the server's ARP table. This makes it possible to determine your computer's IP address from its MAC address with [WakeCompOnLAN](https://github.com/Krail/wakecomponlan).
+Give your computer a "heartbeat" so it remains in the server's ARP table. This makes it possible to determine your computer's IP address from its MAC address with [WakeCompOnLAN](https://github.com/Krail/WakeCompOnLAN).
 
 
 ## 1. Copy and paste the contents of heartbeat.crontab to the prompt given by:
