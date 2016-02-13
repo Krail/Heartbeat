@@ -1,6 +1,6 @@
 {
   "id": "Heartbeat",
-  "keywords": ["Bash_Script", "Crontabs", "Wake_On_LAN"],
+  "keywords": ["Bash_Script", "Crontabs", "WakeOnLAN"],
   "progress": 100,
   "software": true,
   "hardware": false
