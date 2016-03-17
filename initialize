@@ -1,8 +1,34 @@
 #!/bin/sh
-touch /.hrc
-chmod 600 /.hrc
-echo "# LOG file address" > /.hrc
-echo "LOG=" >> /.hrc
-echo "" >> /.hrc
-echo "# LAN server's IP address" >> /.hrc
-echo "SERVER=" >> /.hrc
+
+
+# Constants
+
+# Immutable
+Heartbeat_rc=~/.heartbeatrc
+
+# Mutable
+Log_File_Location=/dev/null
+
+
+# Read user input
+
+echo -n "Enter your server's IP address (e.g., 127.0.0.1 or example.com): "
+read Server_IP
+
+echo -n "Enter the interface you'd like to send your heartbeat from (e.g., eth0): "
+read Interface
+
+
+# Create RC file
+
+touch $Heartbeat_rc
+chmod 600 $Heartbeat_rc
+
+echo "# LOG file address" > $Heartbeat_rc
+echo "Heartbeat_Log=$Log_File_Location\n" >> $Heartbeat_rc
+
+echo "# Interface name" >> $Heartbeat_rc
+echo "Heartbeat_Interface=$Interface\n" >> $Heartbeat_rc
+
+echo "# LAN server's IP address" >> $Heartbeat_rc
+echo "Heartbeat_Server=$Server_IP" >> $Heartbeat_rc

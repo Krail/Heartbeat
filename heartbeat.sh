@@ -4,15 +4,14 @@
 
 
 # Include the configuration file #
-source /.hrc
+. ~/.heartbeatrc
 
-
-echo "==================================================" | tee -a $LOG
-echo "\n.....ba......bump....." | tee -a $LOG
-echo "\nit is $(date), and" | tee -a $LOG
-if ping -nc1 -w1 $SERVER >> /dev/null
-  then echo "$SERVER is UP" | tee -a $LOG
-  else echo "$SERVER is down" | tee -a $LOG
+echo "==================================================" | tee -a $Heartbeat_Log
+echo "\n.....ba......bump....." | tee -a $Heartbeat_Log
+echo "\nit is $(date), and" | tee -a $Heartbeat_Log
+if ping -nc1 -I $Heartbeat_Interface -w1 $Heartbeat_Server >> /dev/null
+  then echo "$Heartbeat_Server is UP" | tee -a $Heartbeat_Log
+  else echo "$Heartbeat_Server is down" | tee -a $Heartbeat_Log
 fi
-echo "\n.....zzZZZZzzzzzz.....\n" | tee -a $LOG
-echo "==================================================" | tee -a $LOG
+echo "\n.....zzZZZZzzzzzz.....\n" | tee -a $Heartbeat_Log
+echo "==================================================" | tee -a $Heartbeat_Log
