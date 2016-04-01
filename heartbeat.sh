@@ -6,7 +6,7 @@
 # Include the configuration file #
 . ~/.heartbeatrc
 
-echo "==================================================" | tee -a $Heartbeat_Log
+echo "==================================================" | tee $Heartbeat_Log
 echo "\n.....ba......bump....." | tee -a $Heartbeat_Log
 echo "\nit is $(date), and" | tee -a $Heartbeat_Log
 if ping -nc1 -I $Heartbeat_Interface -w1 $Heartbeat_Server >> /dev/null
